@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Container from '../Container';
 
 export default class Body extends Component {
     render() {
         return (
             <body style={bodyStyle}>
-                <div data={this.props.data} delTodo={this.props.delItem} addTodo={this.props.addItem}/>
+                <Container data={this.props.data} delTodo={this.props.delTodo} addTodo={this.props.addTodo}/>
             </body>
         );
     }
