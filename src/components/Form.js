@@ -104,8 +104,8 @@ export class Form extends Component {
               ></input>
             </div>
             <div style={inputContainer}>
-              <input type="submit" value="Submit"></input>
-              <input type="reset" value="Reset"></input>
+              <input style={confirmStyle} type="submit" value="Submit"></input>
+              <input style={resetStyle} type="reset" value="Reset"></input>
             </div>
           </fieldset>
         </form>
@@ -113,11 +113,36 @@ export class Form extends Component {
     );
   }
 }
+
 const formContainer = {
   border: "1px solid black",
   height: "auto",
   padding: "50px",
   margin: "10px",
+};
+
+const confirmStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  background: 'green',
+  padding: '4px',
+  margin: '0 3px',
+  borderWidth: '1px',
+  borderRadius: '5px',
+  overflow: 'hidden',
+  cursor: 'pointer'
+};
+
+const resetStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  background: 'yellow',
+  padding: '4px',
+  margin: '0 3px',
+  borderWidth: '1px',
+  borderRadius: '5px',
+  overflow: 'hidden',
+  cursor: 'pointer'
 };
 
 const inputContainer = {

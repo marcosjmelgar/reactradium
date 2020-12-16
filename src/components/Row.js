@@ -20,10 +20,10 @@ export class Row extends Component {
         <td style={dataContainer}>{address}</td>
         <td style={dataContainer}>{zipcode}</td>
         <td style={dataContainer}>
-          <button onClick={this.props.editItem.bind(this, _id.$oid)}>Edit</button>
+          <button style={btnEditStyle} onClick={this.props.editItem.bind(this, _id.$oid)}>Edit</button>
         </td>
         <td style={dataContainer}>
-          <button onClick={this.props.delItem.bind(this, _id.$oid)}>Delete</button>
+          <button style={btnDelStyle} onClick={this.props.delItem.bind(this, _id.$oid)}>Delete</button>
         </td>
       </tr>
     );
@@ -36,5 +36,29 @@ const dataContainer = {
   border: "1px solid black",
   width: "20%",
 };
+
+const btnEditStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  background: 'yellow',
+  padding: '4px',
+  margin: '0 3px',
+  borderWidth: '1px',
+  borderRadius: '5px',
+  overflow: 'hidden',
+  cursor: 'pointer'
+}
+
+const btnDelStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  background: 'red',
+  padding: '4px',
+  margin: '0 3px',
+  borderWidth: '1px',
+  borderRadius: '5px',
+  overflow: 'hidden',
+  cursor: 'pointer'
+}
 
 export default Row;
