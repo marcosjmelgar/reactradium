@@ -5,7 +5,7 @@ export default class AddTodo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            _id: '1236',
+            _id: '',
             CIN: '',
             name: '',
             email: '',
@@ -21,33 +21,34 @@ export default class AddTodo extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.newOne(this.state)
-        this.props.hideForm()
+        this.props.addTodo(this.state)
+        this.props.hideEdit()
     };
 
     render(){
+        const { CIN, name, email, phone, address, zipcode } = this.props.edited[0]
         return (
             <div style={addtodoStyle}>
                 <form style={formStyle} onSubmit={this.handleSubmit}>
                     <div style={{display:'flex'}}>
                         <div style={columnStyle}>
                             <label>Cin: </label>
-                            <select name="CIN" value={this.state.CIN} onChange={this.handleChange}></select>
+                            <input name="CIN" defaultValue={CIN} onChange={this.handleChange}></input>
 
                             <label>Name: </label>
-                            <select name="name" value={this.state.name} onChange={this.handleChange}></select>
+                            <input name="name" defaultValue={name} onChange={this.handleChange}></input>
 
                             <label>Email: </label>
-                            <input type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
+                            <input type="text" name="email" defaultValue={email} onChange={this.handleChange}/>
 
                             <label>Phone: </label>
-                            <input type="number" name="phone" value={this.state.phone} onChange={this.handleChange}/>
+                            <input type="number" name="phone" defaultValue={phone} onChange={this.handleChange}/>
 
                             <label>Address: </label>
-                            <input type="text" name="address" value={this.state.address} onChange={this.handleChange}/>
+                            <input type="text" name="address" defaultValue={address} onChange={this.handleChange}/>
 
                             <label>Zipcode: </label>
-                            <input type="text" name="zipcode" value={this.state.zipcode} onChange={this.handleChange}/>
+                            <input type="text" name="zipcode" defaultValue={zipcode} onChange={this.handleChange}/>
                           </div>
                       </div>
                     <button style={btnStyle} type="submit">Confirm</button>
@@ -58,7 +59,8 @@ export default class AddTodo extends Component {
 }
 
 AddTodo.propTypes = {
-    newOne: PropTypes.func.isRequired,
+    edited: PropTypes.func.isRequired,
+    hideEdit: PropTypes.func.isRequired
 }
 
 const addtodoStyle = {
@@ -66,20 +68,17 @@ const addtodoStyle = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    background: '#CED6DC',
-    border: '1px #707070 solid',
+    border: '1px solid',
     padding: '10px',
-    marginBottom: '20px',
-    borderRadius: '15px',
+    marginBottom: '15px',
 }
 
 const formStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '10px',
-    marginBottom: '10px',
-    borderRadius: '15px',
+    padding: '8px',
+    marginBottom: '6px',
 }
 
 const columnStyle = {

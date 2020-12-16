@@ -6,11 +6,11 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 a {
-  color: #333;
+  color: #555;
   text-decoration: none;
 }
 
@@ -21,9 +21,9 @@ a {
 .btn {
   display: inline-block;
   border: none;
-  background: #555;
-  color: #fff;
-  padding: 7px 20px;
+  background: #666;
+  color: 'blue';
+  padding: 9px 20px;
   cursor: pointer;
 }
 

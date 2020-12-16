@@ -6,7 +6,7 @@ export default class Body extends Component {
     render() {
         return (
             <body style={bodyStyle}>
-                <Container data={this.props.data} delTodo={this.props.delTodo} addTodo={this.props.addTodo}/>
+                <Container data={this.props.data} delTodo={this.props.delTodo} addTodo={this.props.addTodo} editCompany={this.props.editCompany}/>
             </body>
         );
     }
@@ -16,6 +16,7 @@ Body.propTypes = {
     data: PropTypes.array.isRequired,
     delTodo: PropTypes.func.isRequired,
     addTodo: PropTypes.func.isRequired,
+    editCompany: PropTypes.func.isRequired
 }
 
 const bodyStyle = {

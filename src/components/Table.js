@@ -16,15 +16,15 @@ export default class Table extends Component {
                         <th>Zipcode</th>
                         <th>
                             <div style={btnContainerStyle}>
-                                <button onClick={this.props.displayForm} style={btnStyle3}></button>
-                                <button style={btnStyle4}></button>
+                                <button onClick={this.props.displayForm} style={btnStyle3}>Add</button>
+                                <button style={btnStyle4}>Search</button>
                             </div>
                         </th>
                     </tr>
                 </thead>
                 <tbody style={bodyStyle}>
-                    {this.props.data.map((row) => (
-                        <Rows key={row._id.$oid} row={row} editItem={this.props.displayForm} delTodo={this.props.delTodo}/>
+                    {this.props.data.map((row, index) => (
+                        <Rows key={index} row={row} editTodo={this.props.displayForm} delTodo={this.props.delTodo}/>
                     ))}
                 </tbody>
             </table>
@@ -35,19 +35,19 @@ export default class Table extends Component {
 Table.propTypes = {
     data: PropTypes.array.isRequired,
     displayForm: PropTypes.func.isRequired,
-    editItem: PropTypes.func.isRequired,
+    editTodo: PropTypes.func.isRequired,
     delTodo: PropTypes.func.isRequired,
+    hideForm: PropTypes.func.isRequired
 }
 
 const tableStyle = {
-    border: '1px solid gray',
+    border: '1px solid',
     textAlign: 'center',
 }
 
 const headerStyle = {
-    background: '#708DA6',
     color: '#fff',
-    lineHeight: '40px',
+    lineHeight: '10px',
 }
 
 const bodyStyle = {

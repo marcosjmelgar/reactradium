@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Row extends Component {
+export default class Rows extends Component {
     render() {
         const { _id, CIN, name, email, phone, address, zipcode } = this.props.row;
         return (
@@ -14,8 +14,8 @@ export default class Row extends Component {
                 <td style={cellStyle}>{zipcode}</td>
                 <td style={cellStyle}>
                     <div style={btnContainerStyle}>
-                        <button style={btnStyle} onClick={this.props.editItem} ></button>
-                        <button style={btnStyle2} onClick={this.props.delTodo.bind(this, _id)} ></button>
+                        <button style={btnStyle} onClick={this.props.editTodo.bind(this, _id)} >Edit</button>
+                        <button style={btnStyle2} onClick={this.props.delTodo.bind(this, _id)} >Eliminate</button>
                     </div>
                 </td>
             </tr>
@@ -23,20 +23,19 @@ export default class Row extends Component {
     }
 }
 
-Row.propTypes = {
+Rows.propTypes = {
     row: PropTypes.object.isRequired,
-    editItem: PropTypes.func.isRequired,
-    delItem: PropTypes.func.isRequired,
+    editTodo: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired,
 }
 
 const cellStyle = {
-    padding: '5px 20px'
+    padding: '5px 18px'
 }
 
 const rowStyle = {
-    background: '#CED6DC',
     lineHeight: '25px',
-    border: '1px #707070 solid',
+    border: '1px solid',
 }
 
 const btnContainerStyle = {

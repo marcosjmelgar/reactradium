@@ -4,7 +4,7 @@ import Body from './components/layout/Body';
 import companies from './mocks/companies.json';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
 
   constructor (props) {
     super(props);
@@ -25,6 +25,19 @@ class App extends Component {
     this.setState({ companies: [...this.state.companies, newCompany]})
   }
 
+  // Edit Todo
+
+  editTodo = editedCompany => {
+    this.setState ({
+      companies: [...this.state.companies.map((company) => {
+        if (company._id === editedCompany._id) {
+          company = editedCompany;
+        }
+        return companies;
+      })]
+    })
+  }
+
   render() {
     return (
         <div className="App">
@@ -34,6 +47,7 @@ class App extends Component {
                   data={this.state.companies}
                   delTodo={this.delTodo}
                   addTodo={this.addTodo}
+                  editTodo={this.editTodo}
                 />
             </div>
         </div>
@@ -41,4 +55,3 @@ class App extends Component {
   }
 }
 
-export default App;
