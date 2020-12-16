@@ -20,7 +20,7 @@ export class Row extends Component {
         <td style={dataContainer}>{address}</td>
         <td style={dataContainer}>{zipcode}</td>
         <td style={dataContainer}>
-          <button onClick={this.props.editItem.bind(this, _id.$oid)}>Add</button>
+          <button onClick={this.props.editItem.bind(this, _id.$oid)}>Edit</button>
         </td>
         <td style={dataContainer}>
           <button onClick={this.props.delItem.bind(this, _id.$oid)}>Delete</button>

@@ -46,7 +46,7 @@ export class App extends Component {
     } else {
       this.setState({
         Companies: [
-          ...this.state.Technicians.map((company) => {
+          ...this.state.Companies.map((company) => {
             if (company._id.$oid === newItem._id.$oid) {
               company = newItem;
             }
