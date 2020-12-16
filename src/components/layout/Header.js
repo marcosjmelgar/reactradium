@@ -1,17 +1,12 @@
-import React from 'react';
+import React from "react";
+import "./Header.css";
 
-function Header() {
-    return (
-        <header style={headerStyle}>
-            <h1>Company</h1>
-        </header>
-    )
+export default function Header() {
+  return (
+    <div className="container">
+      <div>
+        <h1>Company</h1>
+      </div>
+    </div>
+  );
 }
-
-const headerStyle = {
-    background: '#333',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '10px'
-}
-export default Header;
